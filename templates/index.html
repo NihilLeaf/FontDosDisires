@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="shortcut icon" href="./static/img/icon.png" type="image/x-icon">
+<title>Font dos desejos</title>
+{% endblock %}
+
+{% block body %}
+<div class="background">
+    <div class="header">
+        <h1>Font Dos Desejos</h1>
+    </div>
+    <div class="main-container">
+        <div class="main">
+            <div class="main-title">
+                <h2>Adicione um desejo: </h2>
+            </div>
+            <div class="table-container">
+                <table class="table">
+                    <tr class="table-head">
+                        <th class="table-head-item">Desejos</th>
+                        <th class="table-head-item">Moedas</th>
+                        <th class="table-head-item">Ações</th>
+                    </tr>
+                    {% for task in tasks %}
+                        <tr class="table-body">
+                            <td class="table-body-item"> {{ task.content }} </td>
+                            <td class="table-body-item"> {{ task.coin }} </td>
+                            <td class="table-body-item">
+                                <div class="buttons">
+                                    <a class="edit" href="/edit/{{task.id}}">Editar</a>
+                                    <a class="delete" href="/deletar/{{task.id}}">Deletar</a>
+                                    <br>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <div class="form-container">
+                    <form class="form" action="/" method="POST">
+                        <input minlength="5" maxlength="25" class="text" type="text" id="content" name="content" placeholder="seu desejo por 3 moedas...">
+                        <input class="btn" type="submit" value="Adicionar Desejo">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

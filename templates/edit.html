@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="shortcut icon" href="../static/img/icon.png" type="image/x-icon">
+<title>Font dos desejos</title>
+{% endblock %}
+
+{% block body %}
+<div class="background">
+    <div class="header">
+        <h1>Font Dos Desejos</h1>
+    </div>
+    <div class="main-container">
+        <div class="main">
+            <div class="main-title">
+                <h2>Mudou de ideia? <span>Edite seu desejo!</span></h2>
+            </div>
+            <div class="table-container">
+                <div class="form-container">
+                    <form class="form" action="/edit/{{task.id}}" method="POST">
+                        <input minlength="5" maxlength="25" class="text" type="text" id="content" name="content" placeholder="novo desejo" value="{{task.content}}">
+                        <input class="btn" type="submit" value="Editar Desejo">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
