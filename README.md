@@ -1,5 +1,5 @@
 # FontDosDesejos
 
-Uma CRUD aplication com Flask e design responsivo.
+Uma CRUD application com Flask e design responsivo.
 
 https://nihilleaf.pythonanywhere.com
